@@ -108,34 +108,39 @@ function getPasswordOptions() {
     alert("You have entered a number that is not between 10 and 64.")
   } else {
     alert("Thank you for choosing a length for your password.");
+    return;
   }
   if (specialCharsPrompt === false) {
     alert("You have chosen to not include a Special Character in your password.");
   } else if(specialCharsPrompt !== specialCharacters) {
     alert("Please enter Special Characters from this selection: " + specialCharacters + ".");
-  } else {
+  } else if (specialCharsPrompt === true){
     alert("Thank you for choosing your Special Character(s)");
+    return;
   }
   if (numericCharsPrompt === false) {
     alert("You have chosen to not include a Numeric Character in your password.");
   } else if(numericCharsPrompt !== numericCharacters) {
     alert("Please enter Numeric Characters from this selection: " + numericCharacters + ".");
-  } else {
+  } else if(numericCharsPrompt === true){
     alert("Thank you for choosing your Numeric Character(s)");
+    return;
   }
   if (lowerCasedCharsPrompt === false) {
     alert("You have chosen to not include a Lower Cased Character in your password.");
   } else if(lowerCasedCharsPrompt !== lowerCasedCharacters) {
     alert("Please enter Lower Cased Characters from this selection: " + lowerCasedCharacters + ".");
-  } else {
+  } else if(lowerCasedCharsPrompt === true){
     alert("Thank you for choosing your Lower Cased Character(s)");
+    return;
   }  
   if (upperCasedCharsPrompt === false) {
     alert("You have chosen to not include an Upper Cased Character in your password.");
   } else if(upperCasedCharsPrompt !== upperCasedCharacters) {
     alert("Please enter Upper Cased Characters from this selection: " + upperCasedCharacters + ".");
-  } else {
+  } else if(upperCasedCharsPrompt === true){
     alert("Thank you for choosing your Upper Cased Character(s)");
+    return;
   }
   return;
 }
