@@ -151,8 +151,15 @@ function getRandom(arr) {
   return item;
 }
 
+var randomSpecialCharacters = getRandom(specialCharacters);
+var randomNumericCharacters = getRandom(numericCharacters);
+var randomLowerCasedChars = getRandom(lowerCasedCharacters);
+var randomUpperCasedChars = getRandom(upperCasedCharacters);
 // Function to generate password with user input
 function generatePassword() {
+  let password = randomSpecialCharacters + randomNumericCharacters + randomLowerCasedChars + randomUpperCasedChars + passwordLength;
+
+  return password;
 
 }
 
