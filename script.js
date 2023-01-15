@@ -104,38 +104,38 @@ function getPasswordOptions() {
 
   if (passwordLength.isNAN === false) {
     alert("Please enter a number between 10 and 64.");
-  } else if ((passwordLength >= 10) || (passwordLength <= 64)) {
+  } else if ((passwordLength <= 10) || (passwordLength >= 64)) {
     alert("You have entered a number that is not between 10 and 64.")
   } else {
-    alert("Thank you for choosing a length for your password.");
+    confirm("Thank you for choosing a length for your password.");
   }
   if (specialCharsPrompt === false) {
     alert("You have chosen to not include a Special Character in your password.");
   } else if(specialCharsPrompt !== specialCharacters) {
     alert("Please enter Special Characters from this selection: " + specialCharacters + ".");
-  } else {
-    alert("Thank you for choosing your Special Character(s)");
+  }  {
+    confirm("Thank you for choosing your Special Character(s)");
   }
   if (numericCharsPrompt === false) {
     alert("You have chosen to not include a Numeric Character in your password.");
   } else if(numericCharsPrompt !== numericCharacters) {
     alert("Please enter Numeric Characters from this selection: " + numericCharacters + ".");
   } else {
-    alert("Thank you for choosing your Numeric Character(s)");
+    confirm("Thank you for choosing your Numeric Character(s)");
   }
   if (lowerCasedCharsPrompt === false) {
     alert("You have chosen to not include a Lower Cased Character in your password.");
   } else if(lowerCasedCharsPrompt !== lowerCasedCharacters) {
     alert("Please enter Lower Cased Characters from this selection: " + lowerCasedCharacters + ".");
   } else {
-    alert("Thank you for choosing your Lower Cased Character(s)");
+    confirm("Thank you for choosing your Lower Cased Character(s)");
   }  
   if (upperCasedCharsPrompt === false) {
     alert("You have chosen to not include an Upper Cased Character in your password.");
   } else if(upperCasedCharsPrompt !== upperCasedCharacters) {
     alert("Please enter Upper Cased Characters from this selection: " + upperCasedCharacters + ".");
   } else {
-    alert("Thank you for choosing your Upper Cased Character(s)");
+    confirm("Thank you for choosing your Upper Cased Character(s)");
   }
   return;
 }
@@ -151,10 +151,10 @@ function getRandom(arr) {
   return item;
 }
 
-var randomSpecialCharacters = getRandom(specialCharacters);
-var randomNumericCharacters = getRandom(numericCharacters);
-var randomLowerCasedChars = getRandom(lowerCasedCharacters);
-var randomUpperCasedChars = getRandom(upperCasedCharacters);
+var randomSpecialCharacters = getRandom(specialCharsPrompt);
+var randomNumericCharacters = getRandom(numericCharsPrompt);
+var randomLowerCasedChars = getRandom(lowerCasedCharsPrompt);
+var randomUpperCasedChars = getRandom(upperCasedCharsPrompt);
 // Function to generate password with user input
 function generatePassword() {
   let password = randomSpecialCharacters + randomNumericCharacters + randomLowerCasedChars + randomUpperCasedChars + passwordLength;
