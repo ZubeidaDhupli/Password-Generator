@@ -100,34 +100,34 @@ function getPasswordOptions() {
   specialCharsPrompt;
   numericCharsPrompt;
   lowerCasedCharsPrompt;
-  upperCasedCharsPrompt;
+  upperCasedChoh arsPrompt;
 
-  if (passwordLength.isNAN === false) {
-    alert("Please enter a number between 10 and 64.");
-  } else if ((passwordLength <= 10) || (passwordLength >= 64)) {
-    alert("You have entered a number that is not between 10 and 64.")
-  } else {
-    confirm("Thank you for choosing a length for your password.");
-  }
+  
+  while ((passwordLength < 10) || (passwordLength > 64) || isNAN(passwordLength)) {
+    prompt("Please enter a number between 10 and 64.");
+    if (passwordLength > 10 && passwordLength < 64) {
+      alert("Thank you for choosing a length for your password.");
+    }
+  }  
   if (specialCharsPrompt === false) {
     confirm("You have chosen to not include a Special Character in your password.");
   } else {
-    confirm("You have chosen to use Special Character(s)");
+    confirm("You have chosen to use Special Character(s).");
   }
   if (numericCharsPrompt === false) {
     alert("You have chosen to not include a Numeric Character in your password.");
   } else {
-    confirm("You have chosen to use Numeric Character(s)");
+    confirm("You have chosen to use Numeric Character(s).");
   }
   if (lowerCasedCharsPrompt === false) {
     alert("You have chosen to not include a Lower Cased Character in your password.");
   } else {
-    confirm("You have chosen to use Lower Cased Character(s)");
+    confirm("You have chosen to use Lower Cased Character(s).");
   }  
   if (upperCasedCharsPrompt === false) {
     alert("You have chosen to not include an Upper Cased Character in your password.");
   } else {
-    confirm("You have chosen to use Upper Cased Character(s)");
+    confirm("You have chosen to use Upper Cased Character(s). ");
   }
   return;
 }
