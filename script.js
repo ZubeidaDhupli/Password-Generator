@@ -88,51 +88,47 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-const passwordLength = prompt("Between 10 characters and 64 characters, what length would you like your password to be?");
-const specialCharsPrompt = confirm("Would you like to use Special Characters in your password?");
-const numericCharsPrompt = confirm("Would you like to use Numeric Characters in your password?");
-const lowerCasedCharsPrompt = confirm("Would you like to use Lower Cased Characters in your password?");
-const upperCasedCharsPrompt = confirm("Would you like to use  Upper Cased Characters in your password?"); 
+let passwordLength;
+let specialCharsPrompt;
+let numericCharsPrompt;
+let lowerCasedCharsPrompt;
+let upperCasedCharsPrompt;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  passwordLength;
-  specialCharsPrompt;
-  numericCharsPrompt;
-  lowerCasedCharsPrompt;
-  upperCasedChoh arsPrompt;
-
-  
-  while ((passwordLength < 10) || (passwordLength > 64) || isNAN(passwordLength)) {
+  passwordLength = prompt(
+    "Between 10 characters and 64 characters, what length would you like your password to be?"
+  );
+  if (passwordLength === null) {
+    return;
+  } else {
+  while ((passwordLength < 10) || (passwordLength > 64) || isNaN(passwordLength)) {
     prompt("Please enter a number between 10 and 64.");
+    if (passwordLength === null) {
+      break;
+    }
     if (passwordLength > 10 && passwordLength < 64) {
       alert("Thank you for choosing a length for your password.");
     }
   }  
-  if (specialCharsPrompt === false) {
-    confirm("You have chosen to not include a Special Character in your password.");
-  } else {
-    confirm("You have chosen to use Special Character(s).");
-  }
-  if (numericCharsPrompt === false) {
-    alert("You have chosen to not include a Numeric Character in your password.");
-  } else {
-    confirm("You have chosen to use Numeric Character(s).");
-  }
-  if (lowerCasedCharsPrompt === false) {
-    alert("You have chosen to not include a Lower Cased Character in your password.");
-  } else {
-    confirm("You have chosen to use Lower Cased Character(s).");
-  }  
-  if (upperCasedCharsPrompt === false) {
-    alert("You have chosen to not include an Upper Cased Character in your password.");
-  } else {
-    confirm("You have chosen to use Upper Cased Character(s). ");
-  }
-  return;
-}
+  let validateUserSelection = false;
 
-getPasswordOptions();
+  while(!validateUserSelection) {
+    specialCharsPrompt = confirm("Would you like to use Special Characters in your password?");
+    numericCharsPrompt = confirm("Would you like to use Numeric Characters in your password?");
+    lowerCasedCharsPrompt = confirm("Would you like to use Lower Cased Characters in your password?");
+    upperCasedCharsPrompt = confirm("Would you like to use Upper Cased Characters in your password.?");
+  }
+
+  if (
+    specialCharsPrompt || numericCharsPrompt || lowerCasedCharsPrompt || upperCasedCharsPrompt 
+  ) {
+    validateUserSelection = true;
+  } else {
+    alert("Please select at least one option for characters type.");
+  }
+
+}
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -143,16 +139,27 @@ function getRandom(arr) {
   return item;
 }
 
-var randomSpecialCharacters = getRandom(specialCharsPrompt);
-var randomNumericCharacters = getRandom(numericCharsPrompt);
-var randomLowerCasedChars = getRandom(lowerCasedCharsPrompt);
-var randomUpperCasedChars = getRandom(upperCasedCharsPrompt);
 // Function to generate password with user input
 function generatePassword() {
-  let password = randomSpecialCharacters + randomNumericCharacters + randomLowerCasedChars + randomUpperCasedChars + passwordLength;
+  getPasswordOptions();
 
+  let password = '';
+  for (i = 0; i < passwordLength; i++) {
+    if (specialCharsPrompt) {
+      password += getRandom(specialCharacters);
+    }
+    if (numericCharsPrompt) {
+      password += getRandom(numericCharacters);
+    }
+    if (lowerCasedCharsPrompt) {
+      password += getRandom(lowerCasedCharacters);
+    }
+    if (upperCasedCharsPrompt) {
+      password += getRandom(upperCasedCharacters);
+    }
+  }
   return password;
-
+}
 }
 
 // Get references to the #generate element
