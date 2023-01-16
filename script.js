@@ -128,6 +128,7 @@ function getPasswordOptions() {
       }
     }
   }
+}
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -158,7 +159,6 @@ function generatePassword() {
     }
   }
   return password;
-}
 }
 
 // Get references to the #generate element
