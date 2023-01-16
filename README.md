@@ -11,7 +11,7 @@ N/A
 
 ## Usage
 
-To use this Password Generator, you would use this link: https://zubeidadhupli.github.io/Password-Generator/ . A prompt should pop up and the user will be asked a series of questions about what characters they would like to incorporate into their password. Here is a screenshot of the password generator: ![image of password generator](image/password-generator.png) .
+To use this Password Generator, you would use this link: https://zubeidadhupli.github.io/Password-Generator/ . A prompt should pop up and the user will be asked a series of questions about what characters they would like to incorporate into their password. Here is a screenshot of one of the password options prompt: ![image of password options prompt](image/prompt-png.png) . Here is a screenshot of a password being created: ![image of a generated password](image/randomized-password-png.png).
 
 ## Credits
 
