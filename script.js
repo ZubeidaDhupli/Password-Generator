@@ -102,7 +102,7 @@ function getPasswordOptions() {
   if (passwordLength === null) {
     return;
   } else {
-  while ((passwordLength < 10) || (passwordLength > 64) || isNaN(passwordLength)) {
+  while (passwordLength < 10 || passwordLength > 64 || isNaN(passwordLength)) {
     passwordLength = prompt("Please enter a number between 10 and 64.");
     if (passwordLength === null) {
       break;
@@ -117,17 +117,17 @@ function getPasswordOptions() {
     specialCharsPrompt = confirm("Would you like to use Special Characters in your password?");
     numericCharsPrompt = confirm("Would you like to use Numeric Characters in your password?");
     lowerCasedCharsPrompt = confirm("Would you like to use Lower Cased Characters in your password?");
-    upperCasedCharsPrompt = confirm("Would you like to use Upper Cased Characters in your password.?");
-  }
+    upperCasedCharsPrompt = confirm("Would you like to use Upper Cased Characters in your password?");
 
-  if (
-    specialCharsPrompt || numericCharsPrompt || lowerCasedCharsPrompt || upperCasedCharsPrompt 
-  ) {
-    validateUserSelection = true;
-  } else {
-    alert("Please select at least one option for characters type.");
+    if (
+      specialCharsPrompt || numericCharsPrompt || lowerCasedCharsPrompt || upperCasedCharsPrompt 
+    ) {
+      validateUserSelection = true;
+    } else {
+      alert("Please select at least one option for characters type.");
+      }
+    }
   }
-}
 
 // Function for getting a random element from an array
 function getRandom(arr) {
