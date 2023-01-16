@@ -103,7 +103,7 @@ function getPasswordOptions() {
     return;
   } else {
   while ((passwordLength < 10) || (passwordLength > 64) || isNaN(passwordLength)) {
-    prompt("Please enter a number between 10 and 64.");
+    passwordLength = prompt("Please enter a number between 10 and 64.");
     if (passwordLength === null) {
       break;
     }
@@ -127,7 +127,6 @@ function getPasswordOptions() {
   } else {
     alert("Please select at least one option for characters type.");
   }
-
 }
 
 // Function for getting a random element from an array
